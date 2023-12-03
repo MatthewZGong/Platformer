@@ -25,6 +25,7 @@
 		B3FA3A0E2B1BE35600161F14 /* MenuScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3FA3A0C2B1BE35600161F14 /* MenuScene.cpp */; };
 		B3FA3A112B1BF4A300161F14 /* EndScreen.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3FA3A0F2B1BF4A300161F14 /* EndScreen.cpp */; };
 		B3FA3A142B1C00A400161F14 /* LevelC.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3FA3A122B1C00A400161F14 /* LevelC.cpp */; };
+		B3FA3A192B1C25EC00161F14 /* Effects.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B3FA3A172B1C25EC00161F14 /* Effects.cpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -74,6 +75,8 @@
 		B3FA3A102B1BF4A300161F14 /* EndScreen.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EndScreen.h; sourceTree = "<group>"; };
 		B3FA3A122B1C00A400161F14 /* LevelC.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = LevelC.cpp; sourceTree = "<group>"; };
 		B3FA3A132B1C00A400161F14 /* LevelC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LevelC.h; sourceTree = "<group>"; };
+		B3FA3A172B1C25EC00161F14 /* Effects.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Effects.cpp; sourceTree = "<group>"; };
+		B3FA3A182B1C25EC00161F14 /* Effects.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Effects.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +115,8 @@
 		B315C6802AF6E96000942216 /* Platformer */ = {
 			isa = PBXGroup;
 			children = (
+				B3FA3A172B1C25EC00161F14 /* Effects.cpp */,
+				B3FA3A182B1C25EC00161F14 /* Effects.h */,
 				B38C6B962AF6EC1F00646826 /* resources */,
 				B38C6B912AF6EBEC00646826 /* glm */,
 				B38C6B8F2AF6EBEB00646826 /* ShaderProgram.cpp */,
@@ -214,6 +219,7 @@
 				B315C6822AF6E96000942216 /* main.cpp in Sources */,
 				B3FA3A142B1C00A400161F14 /* LevelC.cpp in Sources */,
 				B38C6B9B2AF81BBA00646826 /* Entity.cpp in Sources */,
+				B3FA3A192B1C25EC00161F14 /* Effects.cpp in Sources */,
 				B3FA3A112B1BF4A300161F14 /* EndScreen.cpp in Sources */,
 				B3FA3A022B1BBF5C00161F14 /* Utility.cpp in Sources */,
 				B3FA3A082B1BC2D700161F14 /* LevelA.cpp in Sources */,

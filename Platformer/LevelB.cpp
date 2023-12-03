@@ -26,6 +26,8 @@ int LEVEL_B_DATA[] =
 LevelB::LevelB(){
     g_number_of_enemies = 1;
     g_game_state.next_scene_id = Level2;
+    g_game_state.state = 0;
+
 }
 
 LevelB::~LevelB()

@@ -12,8 +12,6 @@
 #define LOG(argument) std::cout << argument << '\n'
 #define GL_GLEXT_PROTOTYPES 1
 #define FIXED_TIMESTEP 0.0166666f
-#define PLATFORM_COUNT 11
-#define ENEMY_COUNT 3
 
 #ifdef _WINDOWS
 #include <GL/glew.h>
@@ -40,6 +38,7 @@
 #include "LevelC.h"
 #include "MenuScene.h"
 #include "EndScreen.h"
+#include "Effects.h"
 
 
 
@@ -74,7 +73,7 @@ const int   PLAY_ONCE   = 0,
 // ————— GLOBAL VARIABLES ————— //
 Scene*  g_current_scene;
 
-
+Effects* g_effects;
 SDL_Window* g_display_window;
 bool g_game_is_running = true;
 bool g_game_paused = true;
@@ -120,9 +119,12 @@ void manage_scene()
         return;
     
     if(g_current_scene->g_game_state.state == 1){
+        g_effects->start(NEXT_LEVEL, 2.0f);
         switch_scenes(g_current_scene->g_game_state.next_scene_id);
     }
     else if(g_current_scene->g_game_state.state == 2){
+
+        g_effects->start(DIE, 2.0f);
         g_lives -= 1;
         if(g_lives > 0)
             switch_scenes(g_current_scene_type);
@@ -167,12 +169,13 @@ void initialise()
 
     glClearColor(BG_RED, BG_BLUE, BG_GREEN, BG_OPACITY);
     
-    // ————— LEVEL A SETUP ————— //
+    // ————— Game SETUP ————— //
     g_game_paused = true;
     g_lives = 3;
     g_current_scene = new MenuScene();
     g_current_scene_type = Menu;
     g_current_scene->initialise();
+    g_effects = new Effects(g_projection_matrix, g_view_matrix);
     
     // ––––– GENERAL ––––– //
     glEnable(GL_BLEND);
@@ -279,6 +282,8 @@ void update()
         if( g_current_scene->g_game_state.player->get_dead())
             g_current_scene->g_game_state.state = 2;
         delta_time -= FIXED_TIMESTEP;
+        g_effects->update(FIXED_TIMESTEP);
+
     }
 
     g_time_accumulator = delta_time;
@@ -313,6 +318,8 @@ void render()
     print_lives();
     if(g_game_paused)
         print_pause_screen();
+    g_effects->render();
+
 
     SDL_GL_SwapWindow(g_display_window);
 }

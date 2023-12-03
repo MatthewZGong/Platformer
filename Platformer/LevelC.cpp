@@ -16,16 +16,18 @@ const int E = -1;
 
 int LEVEL_C_DATA[] =
 {
-    E, E, E, E, E, E, E, E, E, 1, 3, E, E, E, E,
+    E, E, E, E, E, E, E, E, E, 0, E, E, E, E, E,
     E, E, E, E, E, E, 1, 3, E, E, E, E, E, E, E,
-    E, E, E, 1, 3, E, E, E, E, E, E, E, E, 1, 3,
-    1, 3, E, E, E, E, E, E, E, E, E, E, E, E, E,
+    E, E, E, 0, E, E, E, E, E, E, E, E, E, E, E,
+    1, 3, E, E, E, E, E, E, E, E, E, E, E, 1, 3,
     E, E, E, E, E, E, E, E, E, E, E, E, E, E, E
 };
 
 LevelC::LevelC(){
     g_number_of_enemies = 0;
     g_game_state.next_scene_id = End;
+    g_game_state.state = 0;
+
 }
 
 LevelC::~LevelC()
