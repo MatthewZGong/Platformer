@@ -24,7 +24,7 @@ int LEVEL_C_DATA[] =
 };
 
 LevelC::LevelC(){
-    g_number_of_enemies = 0;
+    g_number_of_enemies = 1;
     g_game_state.next_scene_id = End;
     g_game_state.state = 0;
 
@@ -44,6 +44,7 @@ LevelC::~LevelC()
 void LevelC::initialise()
 {
   
+    g_number_of_enemies = 1;
     g_game_state.state = 0;
 
     // ————— MAP SET-UP ————— //
@@ -79,6 +80,10 @@ void LevelC::initialise()
 
     // ––––– ENEMY––––– //
 
+    g_game_state.enemies = new Entity[g_number_of_enemies];
+    //follow
+
+    createFlyEnemy(sprite_tileset_texture_id, g_game_state.enemies ,glm::vec3(10.0f, 5.0f, 0.0f));
 
     //follow
 
